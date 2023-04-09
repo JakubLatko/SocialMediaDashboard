@@ -1,0 +1,13 @@
+@use 'variables' as v;
+
+body{
+    font-size: 100%;
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    flex-direction: column;
+    background-image: linear-gradient(var(--primary-300) 30vw, var(--primary-200) 30vw 100%);
+}
+
+*{
+    font:inherit;
+}
