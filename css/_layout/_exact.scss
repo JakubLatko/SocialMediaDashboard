@@ -1,0 +1,152 @@
+.exactOverview{
+    margin-inline: 5vw;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding-bottom: 5rem;
+    &__intro{
+        color: var(--primary-900);
+        font-size: clamp(1rem, 8vw, 3rem);
+        font-weight: 700;
+        padding-block: 2.5rem 1rem;
+    }
+}
+
+.minorPerkWrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.minorPerk{
+    background-color: var(--primary-400);
+    border-radius: 5px;
+    padding: 2rem 2rem;
+    
+    &__top,
+    &__bottom{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        
+    }
+    &__top{
+        color: var(--primary-500);
+        padding-bottom: 1rem;
+        img{
+            object-fit: contain;
+            width: 10%;
+        }
+        p{
+            font-weight: 700;
+        }
+    }
+    &__bottom{
+        color: var(--primary-900);
+        display: flex;
+        flex-direction: row;
+        align-items:end;
+        padding-top: 1rem;
+        h3{
+            font-size: clamp(2rem, 10vw, 4rem);
+            font-weight: 700;
+            margin-top: auto;
+            height: fit-content;
+            
+        }
+
+        &__delta{
+            display: flex;
+            align-items: center;
+            margin-bottom: .5em;
+            p{
+                color: var(--accent-300);
+                font-weight: 700;
+                margin-left:.25em ;
+                font-size: clamp(1rem, 4vw, 2rem);
+                
+            }
+            p[data-type="inverted"]{
+                color: var(--accent-800)
+            }
+            img{
+                object-fit: scale-down;
+
+            }
+        }
+    }
+    &:hover{
+        cursor: pointer;
+        background-color:var(--primary-500-01);
+        
+    }
+}
+@media only screen and (min-width:600px){
+    .minorPerkWrapper{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+    .minorPerk{
+        flex-grow: 1;
+        flex-basis: calc(50% - 1rem);
+        &__bottom{
+            h3{
+                font-size: clamp(1.25rem, 6vw, 3rem);
+            }
+            &__delta{
+                p{
+                    font-size: clamp(1rem, 2.5vw, 2rem);
+                }
+            }
+        }   
+    }
+}
+
+
+@media only screen and (min-width:1024px){
+    .exactOverview{
+        margin-inline: 10vw;
+    }
+    .minorPerk{
+        flex-basis: calc(33.3% - 1.33rem);
+        &__bottom{
+            h3{
+                font-size: clamp(1.25rem, 5vw, 3rem);
+            }
+            &__delta{
+                p{
+                    font-size: clamp(1rem, 2vw, 2rem);
+                }
+            }
+        }
+    }
+}
+
+
+@media only screen and (min-width:1440px){
+    .exactOverview{
+        margin-inline: 10vw;
+        &__intro{
+            font-size: clamp(1rem, 4vw, 2.5rem);
+        }
+    }
+    
+
+    .minorPerk{
+        flex-basis: calc(25% - 1.5rem);
+        
+        &__bottom{
+            h3{
+                font-size: clamp(1rem, 3vw, 2rem);
+            }
+            &__delta{
+                p{
+                    font-size: clamp(0.75rem, 1.25vw, 1.25rem);
+                }
+            }
+        }
+        
+    }
+}

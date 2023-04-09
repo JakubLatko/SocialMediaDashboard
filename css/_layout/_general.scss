@@ -1,0 +1,119 @@
+.generalOverwiev{
+    display: flex;
+    flex-direction: column;
+    margin-inline: 5vw;
+    gap: 1rem;
+}
+
+.perk{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background-color: var(--primary-400);
+    align-items: center;
+    justify-content: center;
+    border-top: 3px solid var(--accent-700) ;
+    border-radius: 5px;
+    color: var(--primary-900);
+    padding: 1rem;
+    img{
+        object-fit: scale-down;
+    }
+    &__platform{
+        display: flex;
+        flex-direction: row;
+        gap: 0.5rem;
+        padding-block:0.5rem ;
+        p{
+            color: var(--primary-500);
+            
+        }
+    }
+    h2{
+        font-size: clamp(2rem, 16vw, 5.5rem);
+        font-weight: 700;
+       
+    }
+    h3{
+        letter-spacing: .25rem;
+        color: var(--primary-500);
+        text-transform: uppercase;
+        font-size: clamp(0.75rem, 3vw, 1.25rem);
+    }
+    &__delta{
+        display: flex;
+        flex-direction: row;
+        padding-top: 1.5rem;
+        p{
+            color: var(--accent-300);
+            font-size: clamp(0.75rem, 3vw, 1.25rem);
+            margin-left: 0.25em;
+        }
+        p[data-type="inverted"]{
+            color: var(--accent-800);
+        }
+    }
+    &:hover{
+        cursor: pointer;
+        background-color:var(--primary-500-01);
+        
+    }
+}
+
+.perk:nth-of-type(1){
+    border-top: 3px solid var(--accent-400) ;
+}
+
+.perk:nth-of-type(2){
+    border-top: 3px solid var(--accent-500) ;
+}
+
+.perk:nth-of-type(3){
+    position: relative;
+}
+.perk:nth-of-type(3)::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 4px;
+    transform: translateY(-3px);
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    // border-image: 3px solid linear-gradient(red 0%, blue 100%);
+    background-image: var(--accent-600);
+}
+
+@media only screen and (min-width:768px){
+    .generalOverwiev{
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .perk{
+        flex-grow: 1;
+        flex-basis: calc(50% - 1rem);
+        h2{
+            font-size: clamp(2rem, 8vw, 4.5rem);
+        }
+        h3{
+            font-size: clamp(1rem, 1vw, 2.5rem);
+        }
+       
+    }
+}
+
+
+@media only screen and (min-width:1024px){
+    .generalOverwiev{
+        margin-inline: 10vw;
+        flex-wrap: nowrap;
+    }
+    
+    .perk{
+        flex-basis: calc(25% - 1.5rem);
+    }
+
+}

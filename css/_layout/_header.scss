@@ -1,0 +1,100 @@
+.header{
+    display: flex;
+    flex-direction: column;
+    color:var(--primary-900);
+    margin-inline: 5vw;
+    padding-top:2rem ;
+    &__top{
+        padding-block: 1rem;
+        font-weight: 700;
+        h1{
+            font-size: clamp(1rem, 6vw, 2.5rem);
+        }
+        p{
+            color: var(--primary-500);
+            font-size: clamp(0.75rem, 3.5vw, 1.25rem);
+        }
+    }
+    &__toggle{
+        border-top: 1px solid var(--primary-400);
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding-block: 1rem;
+        
+        #colorSchemeLabel{
+            color: var(--primary-500);
+            font-weight: 700;
+            //margin-right: 4rem;
+        }
+        &__wrapper{
+            position: relative;
+            display: inline-block;
+            width: 4rem;
+            height: 2rem;
+            margin-inline: 1rem;
+            input{
+                opacity: 0;
+                width: 0;
+                height: 0;
+            }
+        }
+    }
+}
+
+
+.slider{
+    position: absolute;
+    cursor: pointer;
+    inset: 0;
+    right: 0;
+    // left: -3rem;
+    width: 4rem;
+    height: 2rem;
+    background-image: var(--darkToggle);
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 100vw;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    aspect-ratio: 1/1;
+    width: 1.5rem;
+    left: 0.5rem;
+    top: 0.25rem;
+    background-color: var(--primary-200);
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 50%;
+  }
+
+
+input:checked + .slider::before {
+    background-color: var(--primary-200);
+  }
+  
+input:focus + .slider {
+    box-shadow: 0 0 1px hsl(236, 72%, 79%);
+  }
+  
+input:checked + .slider:before {
+    -webkit-transform: translateX(1.5rem);
+    -ms-transform: translateX(1.5rem);
+    transform: translateX(1.5rem);
+  }
+
+
+@media only screen and (min-width:1024px){
+    .header{
+        flex-direction: row;
+        justify-content: space-between;
+        padding-block: 2rem;
+        margin-inline: 10vw;
+        &__toggle{
+            border-top: 0;
+            align-items: center;
+        }
+    }
+}
